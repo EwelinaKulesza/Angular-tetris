@@ -4,21 +4,35 @@
 <h1>
   Strona z grą Chum-Tris
 </h1>
+</header>
 
 <h2> Zaczynamy? </h2>
-
 <button>Graj</button><button>Wyniki</button>
-
 <br>
 
 <h6>Tu będzie ta gra ale w tym momencie czort wie jak to obsłużyć </h6>
 
-<br>
+<p>
+  <tetris-core #game ></tetris-core>
 
-<button>Zaloguj/wynierz użytkownika</button>
+  <button (click)="game.actionStart()">Start</button>
+  <button (click)="game.actionStop()">Stop</button>
+  <button (click)="game.actionReset()">Reset</button>
+  <button (click)="game.actionRotate()">Rotate</button>
+  <button (click)="game.actionLeft()">Left</button>
+  <button (click)="game.actionRight()">Right</button>
+  <button (click)="game.actionDown()">Down</button>
 
-</header>
 
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <button>Zaloguj/wynierz użytkownika</button>
+</p>
+
+<p>
+   
+</p>
 
 
 
