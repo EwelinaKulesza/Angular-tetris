@@ -10,10 +10,24 @@
 <button>Graj</button><button>Wyniki</button>
 <br>
 
+<html>
+
+<header>
+<h1>
+  Strona z grą Chum-Tris
+</h1>
+</header>
+
+<h2> Zaczynamy? </h2>
+<button (click)="game.actionStart()">Graj</button><button>Wyniki</button>
+<br>
+
 <h6>Tu będzie ta gra ale w tym momencie czort wie jak to obsłużyć </h6>
 
-<p>
-  <tetris-core #game ></tetris-core></p>
+<tetris-core #game
+(lineCleared)="onLineCleared()"></tetris-core>
+
+{{ score }}
 
   <p>
   <button disabled = true>*****</button>
