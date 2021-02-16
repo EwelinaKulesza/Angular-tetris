@@ -1,1 +1,27 @@
-<p>game-page works!</p>
+<tetris-core #game
+(lineCleared)="onLineCleared()"></tetris-core>
+
+{{ score }}
+
+  <p>
+  <button disabled = true>*****</button>
+  <button (click)="game.actionStart()">Start</button>
+  <button (click)="game.actionStop()">Stop</button>
+  <button disabled = true>*****</button>
+  <br><br><br><br>
+  
+  <button (click)="game.actionLeft()">←Left</button>
+  <button (click)="game.actionRotate()">↻Rotate⟳</button>
+  <button (click)="game.actionRight()">Right→</button>
+  <br>
+  <button disabled = true>★★★</button>
+  <button (click)="game.actionDown()">↓Down↓</button>
+  <button disabled = true>★★★</button>
+  <br><br><br><br>
+  <button (click)="game.actionReset()">- - - - - Reset - - - - - </button>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <button>Zaloguj/wynierz użytkownika</button>
+</p>

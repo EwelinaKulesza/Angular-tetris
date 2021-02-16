@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title = 'TetrisKewelina';
+  title = 'Tetris by K. Ewelina';
   public score = 0;
 
   public onLineCleared() {

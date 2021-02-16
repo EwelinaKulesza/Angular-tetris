@@ -1,0 +1,13 @@
+button {
+    color: white;
+    background-color: black;
+    font-size: larger;
+    outline-color: midnightblue;
+}
+  button:focus {
+    background: red;
+  }
+ 
+  button:active {
+    outline-color: yellow ;
+  }
