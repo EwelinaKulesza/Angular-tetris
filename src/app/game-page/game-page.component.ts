@@ -9,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class GamePageComponent implements OnInit {
   public score = 0;
   public startTime: number = 0;
+  public gameStateInicator: boolean;
   constructor() { }
 
   ngOnInit(): void {
-    let startTime = 60*60*(new Date().getHours()) + 60*(new Date().getMinutes()) + new Date().getSeconds();
+    //TODO: tu też jest jakiś problem z tym zainicjowaniem czasu początkowego
+    let startTime = 3600*(new Date().getHours()) + 60*(new Date().getMinutes()) + new Date().getSeconds();
     this.startTime = startTime;
   }
 
@@ -22,6 +24,15 @@ export class GamePageComponent implements OnInit {
     someValue = this.score;
     return someValue.toString();
   }
+  
+  public prettyBigGameIndicator(inputStatus: boolean) {
+    if (inputStatus === false) {
+      return "PAUSED";
+    }else if (inputStatus === true){
+      return "STARTED"
+    } else return "READY"
+  }
+
 
   //coś tu nie działa jak trzeba, ten czas początkowy niprawidłowo liczony
   public countPlayTime(timeOfBegining: number) {
