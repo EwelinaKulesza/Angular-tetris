@@ -4,59 +4,7 @@
     Welcome to {{title}}!
   </h1>
 
-  <app-game-page></app-game-page>
   <app-intro-page></app-intro-page>
-
-</div>
-
-<header>
-<h1>
-  Strona z grą Chum-Tris
-</h1>
-</header>
-
-<h2> Zaczynamy? </h2>
-<button>Graj</button><button>Wyniki</button>
-<br>
-
-<html>
-
-<header>
-<h1>
-  Strona z grą Chum-Tris
-</h1>
-</header>
-
-<h2> Zaczynamy? </h2>
-<button (click)="game.actionStart()">Graj</button><button>Wyniki</button>
-<br>
-
-<h6>Tu będzie ta gra ale w tym momencie czort wie jak to obsłużyć </h6>
-
-<tetris-core #game
-(lineCleared)="onLineCleared()"></tetris-core>
-
-{{ score }}
-
-  <p>
-  <button disabled = true>*****</button>
-  <button (click)="game.actionStart()">Start</button>
-  <button (click)="game.actionStop()">Stop</button>
-  <button disabled = true>*****</button>
-  <br><br><br><br>
+  <app-game-page></app-game-page>
   
-  <button (click)="game.actionLeft()">Left</button>
-  <button (click)="game.actionRotate()">Rotate</button>
-  <button (click)="game.actionRight()">Right</button>
-  <br>
-  <button disabled = true>★★★</button>
-  <button (click)="game.actionDown()">Down</button>
-  <button disabled = true>★★★</button>
-  <br><br><br><br>
-  <button (click)="game.actionReset()">- - - - - Reset - - - - - </button>
-
-
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <button>Zaloguj/wynierz użytkownika</button>
-</p>
+  {{CurrentTime}}

@@ -11,3 +11,17 @@ button {
   button:active {
     outline-color: yellow ;
   }
+
+  a{
+    color: black;
+    background-color: coral;
+    font-size: x-large;
+    outline-color: rgb(1, 1, 37);
+  }
+
+  div {
+    color: black;
+    background-color: midnightblue;
+    font-size: larger;
+    outline-color: rgb(1, 1, 37);
+  }

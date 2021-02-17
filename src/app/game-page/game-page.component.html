@@ -1,7 +1,7 @@
 <tetris-core #game
 (lineCleared)="onLineCleared()"></tetris-core>
 
-{{ score }}
+<a>Score: {{ score }}</a>
 
   <p>
   <button disabled = true>*****</button>
@@ -19,9 +19,14 @@
   <button disabled = true>★★★</button>
   <br><br><br><br>
   <button (click)="game.actionReset()">- - - - - Reset - - - - - </button>
-
-
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
   <button>Zaloguj/wynierz użytkownika</button>
 </p>
+
+<div> 
+ play time: {{tTtime}}
+ 
+</div>
