@@ -17,8 +17,9 @@ export class IntroPageComponent implements OnInit {
   }
 
   onEmailEnter(value: string) {
-    let mabyEmailTemp: string;
-    if (mabyEmailTemp.includes("@")) {
+    let mabyEmailTemp: string = value;
+    //prosty walidator czy mail, jak będe miała czas to zerknę na regex'y albo jaies gotowe walidatory Angulara
+    if (mabyEmailTemp.includes('@') && mabyEmailTemp.includes('.') && (mabyEmailTemp.length > 7)) {
       this.emailValue = value;
       this.formEmailIsShows = false;
     } 
