@@ -4,7 +4,8 @@
     Welcome to {{title}}!
   </h1>
 
-  <app-intro-page></app-intro-page>
-  <app-game-page></app-game-page>
+  <div *ngIf="true"><app-intro-page></app-intro-page></div>
+  <div *ngIf="false"><app-game-page></app-game-page></div>
+  
   
   {{CurrentTime}}

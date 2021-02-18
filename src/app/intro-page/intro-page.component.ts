@@ -6,6 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro-page.component.css']
 })
 export class IntroPageComponent implements OnInit {
+  public nameValue: string = '...';
+  private emailValue: string = '';
+  public formNameIsShows: Boolean = true;
+  public formEmailIsShows: Boolean = true;
+
+  onNameEnter(value: string) {
+    this.nameValue = value;
+    this.formNameIsShows = false;
+  }
+
+  onEmailEnter(value: string) {
+    this.emailValue = value + "!";
+    this.formEmailIsShows = false;
+  }
 
   constructor() { }
 

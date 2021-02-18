@@ -1,10 +1,16 @@
-<h3>Zagrajmy w Tetrisa ... </h3>
+<h3>Zagrajmy w Tetrisa {{nameValue}}</h3>
 <br>
-<h4> Zaczynamy? </h4>
-<br>
-<!--
-<button>Graj</button><button>Wyniki</button>
-<br>
-<button (click)="game.actionStart()">Graj</button><button>Wyniki</button>
-<br>
--->
+ 
+<div *ngIf="formNameIsShows"> 
+    jak masz na imię?: <br>
+    <input #box (keyup.enter)="onNameEnter(box.value)">
+</div>
+
+<div *ngIf="formEmailIsShows"> 
+    {{nameValue}} podaj swój email: <br>
+    <input #box (keyup.enter)="onEmailEnter(box.value)">
+</div>
+
+<div *ngIf="!formEmailIsShows"> 
+    <button>Gramy</button>
+</div>
