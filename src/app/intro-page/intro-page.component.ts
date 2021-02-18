@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-intro-page',
@@ -12,6 +12,14 @@ export class IntroPageComponent implements OnInit {
   public validEmailMessage: string;
   public nameIsInvalid: Boolean = true;
   public emailIsInvalid: Boolean = true;
+  
+  @Output()
+  change = new EventEmitter();
+  
+  public add(input: boolean) {
+    input = !input;
+    this.change.emit(input);
+  }
 
   onNameEnter(value: string) {
     let mabyNameTemp: string = value;

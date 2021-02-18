@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+//import * as EventEmitter from 'events';
+import { GameState } from 'ngx-tetris';
 
 
 @Component({
@@ -7,6 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game-page.component.css']
 })
 export class GamePageComponent implements OnInit {
+  @Output()
+  change = new EventEmitter();
+  public add(value) {
+    this.change.emit(value);
+  }
+
   public score = 0;
   //public startTime: number = 0;
   public gameStateInicator: boolean;

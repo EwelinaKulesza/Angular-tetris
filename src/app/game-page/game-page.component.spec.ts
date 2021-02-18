@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GamePageComponent } from './game-page.component';
+import { Output, EventEmitter } from '@angular/core';
 
 describe('GamePageComponent', () => {
   let component: GamePageComponent;
