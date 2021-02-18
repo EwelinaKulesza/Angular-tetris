@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,18 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tetris by K. Ewelina';
+  chldValid: string = ""
+  usrName: string = ""
+  usrEmail: string = ""
+   
+
+  parentFunction(data) {
+    console.warn(data);
+    this.usrName=data.name;
+    this.chldValid=data.valid;
+    this.usrEmail =data.email;
+  }
+
   public CurrentTime: any;
   public firstPageOnTop: Boolean = true;
   

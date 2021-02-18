@@ -13,13 +13,12 @@ export class IntroPageComponent implements OnInit {
   public nameIsInvalid: Boolean = true;
   public emailIsInvalid: Boolean = true;
   
-  @Output()
-  change = new EventEmitter();
-  
-  public add(input: boolean) {
-    input = !input;
-    this.change.emit(input);
-  }
+  @Output() parentFunction: EventEmitter<any> = new EventEmitter()
+
+  //change = new EventEmitter();
+  // public add(input: boolean) {
+  //   input = !input;
+  // }
 
   onNameEnter(value: string) {
     let mabyNameTemp: string = value;
@@ -54,6 +53,14 @@ export class IntroPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  sendData(){
+    //   this.change.emit(input);
+    let validationFine: Boolean = !(this.nameIsInvalid || this.emailIsInvalid)
+    let data = { valid: validationFine, name: this.nameValue, email: this.emailValue }
+    this.parentFunction.emit(data)
   }
 
 }

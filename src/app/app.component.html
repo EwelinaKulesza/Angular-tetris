@@ -4,14 +4,22 @@
     Welcome to {{title}}
   </h2>
 
-  <div *ngIf="firstPageOnTop "><app-intro-page (change)="onChange($event)"></app-intro-page>
-  </div>
+  <!-- <div *ngIf="firstPageOnTop "><app-intro-page (change)="onChange($event)"></app-intro-page>
+  </div> -->
+
+  <div>
+    <app-intro-page (parentFunction) = "parentFunction($event)"></app-intro-page> 
+ </div> 
 
   <div *ngIf="!firstPageOnTop "><app-game-page (change)="onChange($event)"></app-game-page>
-    <child (change)="onChange($event)"></child>
   </div>
+
+
   
-  {{CurrentTime}}
+<br><br><br><br>
+<h1>this namae wa: {{usrName}}</h1>
+
+{{CurrentTime}}
 
   
  
