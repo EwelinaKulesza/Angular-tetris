@@ -7,7 +7,7 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'Tetris by K. Ewelina';
-  chldValid: string = ""
+  public chldFormValid: Boolean = false;
   usrName: string = ""
   usrEmail: string = ""
    
@@ -15,7 +15,7 @@ export class AppComponent {
   parentFunction(data) {
     console.warn(data);
     this.usrName=data.name;
-    this.chldValid=data.valid;
+    this.chldFormValid=data.valid;
     this.usrEmail =data.email;
   }
 

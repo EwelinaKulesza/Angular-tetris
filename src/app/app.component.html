@@ -7,11 +7,14 @@
   <!-- <div *ngIf="firstPageOnTop "><app-intro-page (change)="onChange($event)"></app-intro-page>
   </div> -->
 
-  <div>
+  <!-- <div>
     <app-intro-page (parentFunction) = "parentFunction($event)"></app-intro-page> 
- </div> 
+ </div>  -->
 
-  <div *ngIf="!firstPageOnTop "><app-game-page (change)="onChange($event)"></app-game-page>
+ <div *ngIf="!chldFormValid"><app-intro-page (parentFunction) = "parentFunction($event)"></app-intro-page>
+ </div>
+
+  <div *ngIf="chldFormValid"><app-game-page (parentFunction) = "parentFunction($event)"></app-game-page>
   </div>
 
 
