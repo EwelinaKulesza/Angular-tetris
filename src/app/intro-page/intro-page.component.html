@@ -15,8 +15,8 @@
 <div> {{this.validEmailMessage}} </div>
 <br>
 <div *ngIf="nameIsInvalid || emailIsInvalid"> 
-    <button (click) = "checkIsValidForms()">Gramy</button>
+    <button (click) = "checkIsValidForms()">Start</button>
 </div>
 <div *ngIf="!(nameIsInvalid || emailIsInvalid)"> 
-    <button type="submit" [disabled]="nameIsInvalid || emailIsInvalid">Gramy!</button> <!--trochę inny pomsył na przycisk-->
+    <button type="submit" [disabled]="nameIsInvalid || emailIsInvalid">Start!</button> <!--trochę inny pomsył na przycisk-->
 </div>

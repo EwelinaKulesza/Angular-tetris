@@ -4,8 +4,8 @@
     Welcome to {{title}}
   </h2>
 
-  <div *ngIf="true"><app-intro-page></app-intro-page></div>
-  <div *ngIf="false"><app-game-page></app-game-page></div>
+  <div *ngIf="firstPageOnTop"><app-intro-page></app-intro-page></div>
+  <div *ngIf="!firstPageOnTop"><app-game-page></app-game-page></div>
   
 
   {{CurrentTime}}
