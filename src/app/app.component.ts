@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +10,15 @@ export class AppComponent {
   chldFormValid: Boolean = false;
   usrName: string = ""
   usrEmail: string = ""
-  userInfoDate={
+  userInfoDate = {
     name: this.usrName,
     email: this.usrEmail
   }
-  parentFunction(data) {
-    //console.warn(data);
-    this.usrName=data.name;
-    this.chldFormValid=data.valid;
-    this.usrEmail =data.email;
+  parentFunction(data: any) {
+    console.warn(data);
+    this.usrName = data.name;
+    this.chldFormValid = data.valid;
+    this.usrEmail = data.email;
   }
 
   public CurrentTime: any;
