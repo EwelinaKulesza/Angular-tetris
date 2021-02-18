@@ -1,14 +1,22 @@
 <h3>Zagrajmy w Tetrisa {{nameValue}}</h3>
 <br>
  
-<div *ngIf="formNameIsShows"> 
-    jak masz na imię?: <br>
+<div> 
+    Wpisz imię i naciśnij enter: <br>
     <input #box (keyup.enter)="onNameEnter(box.value)">
+    <br>
+    {{nameValue}} podaj email i wciśniej enter : <br>
+    <input #box1 (keyup.enter)="onEmailEnter(box1.value)">
 </div>
 
-<div *ngIf="formEmailIsShows"> 
-    {{nameValue}} podaj swój email: <br>
-    <input #box (keyup.enter)="onEmailEnter(box.value)">
+<br>
+<div> {{this.validNameMessage}} </div>
+<br>
+<div> {{this.validEmailMessage}} </div>
+<br>
+<div *ngIf="nameIsInvalid || emailIsInvalid"> 
+    <button (click) = "checkIsValidForms()">Gramy</button>
 </div>
-
-<button type="submit" [disabled]="formEmailIsShows || formNameIsShows">Gramy!</button>
+<div *ngIf="!(nameIsInvalid || emailIsInvalid)"> 
+    <button type="submit" [disabled]="nameIsInvalid || emailIsInvalid">Gramy!</button> <!--trochę inny pomsył na przycisk-->
+</div>
