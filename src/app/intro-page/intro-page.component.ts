@@ -12,14 +12,20 @@ export class IntroPageComponent implements OnInit {
   public formEmailIsShows: Boolean = true;
 
   onNameEnter(value: string) {
-    this.nameValue = value;
+    this.nameValue = value + "!";
     this.formNameIsShows = false;
   }
 
   onEmailEnter(value: string) {
-    this.emailValue = value + "!";
-    this.formEmailIsShows = false;
+    let mabyEmailTemp: string;
+    if (mabyEmailTemp.includes("@")) {
+      this.emailValue = value;
+      this.formEmailIsShows = false;
+    } 
+    
+
   }
+
 
   constructor() { }
 

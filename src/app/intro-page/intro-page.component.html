@@ -11,6 +11,6 @@
     <input #box (keyup.enter)="onEmailEnter(box.value)">
 </div>
 
-<div *ngIf="!formEmailIsShows"> 
+<div *ngIf="(!formEmailIsShows) && (!formNameIsShows)"> 
     <button>Gramy</button>
 </div>
