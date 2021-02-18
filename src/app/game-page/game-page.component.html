@@ -1,12 +1,8 @@
 <tetris-core #game
 (lineCleared)="onLineCleared()"></tetris-core>
-
 <h1>The game is: {{prettyBigGameIndicator(gameStateInicator)}}</h1>
 <a>Score: {{ score }}</a>
-
-<button (click)="add(1)">Next</button>
-<button (click)="add(-1)">Prev</button>
-
+<br>
   <p>
   <button disabled = true>*****</button>
   <button (click)="gameStateInicator = true; game.actionStart()">Start</button>
@@ -25,10 +21,13 @@
   <button (click)="game.actionReset()">- - - - - Reset - - - - - </button>
   <br>
   <br><br><br><br><br><br>
-  <br><br><br><br><br><br>
-  <br><br><br><br><br><br>
-  <button>Zaloguj/wynierz użytkownika</button>
+  <!-- <br><br><br><br><br><br>
+  <br><br><br><br><br><br> -->
+  <button (click)="sendData()">exit game</button>
 </p>
+
+<br>
+<h6>You're login as: {{loggedName}}, Your email: {{loggedEmail}}</h6>
 
 <div> 
  <!--play time: {{tTtime}}-->

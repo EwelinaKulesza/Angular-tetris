@@ -1,7 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-//import * as EventEmitter from 'events';
 import { GameState } from 'ngx-tetris';
-
 
 @Component({
   selector: 'app-game-page',
@@ -9,13 +7,11 @@ import { GameState } from 'ngx-tetris';
   styleUrls: ['./game-page.component.css']
 })
 export class GamePageComponent implements OnInit {
-  @Output()
-  change = new EventEmitter();
-  public add(value) {
-    this.change.emit(value);
-  }
+  @Output() parentFunction: EventEmitter<any> = new EventEmitter()
 
   public score = 0;
+  public loggedName: string = ""
+  public loggedEmail: string = ""
   //public startTime: number = 0;
   public gameStateInicator: boolean;
   constructor() { }
@@ -39,6 +35,12 @@ export class GamePageComponent implements OnInit {
     }else if (inputStatus === true){
       return "STARTED"
     } else return "READY"
+  }
+
+  sendData(){
+    //   this.change.emit(input);
+    let data = { valid: false, name: "", email: "" }
+    this.parentFunction.emit(data)
   }
 
 

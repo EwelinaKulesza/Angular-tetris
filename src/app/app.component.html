@@ -4,13 +4,6 @@
     Welcome to {{title}}
   </h2>
 
-  <!-- <div *ngIf="firstPageOnTop "><app-intro-page (change)="onChange($event)"></app-intro-page>
-  </div> -->
-
-  <!-- <div>
-    <app-intro-page (parentFunction) = "parentFunction($event)"></app-intro-page> 
- </div>  -->
-
  <div *ngIf="!chldFormValid"><app-intro-page (parentFunction) = "parentFunction($event)"></app-intro-page>
  </div>
 
@@ -18,9 +11,9 @@
   </div>
 
 
-  
 <br><br><br><br>
-<h1>this namae wa: {{usrName}}</h1>
+<h1>this namae wa: {{usrName}} and emaial {{usrEmail}}</h1>
+
 
 {{CurrentTime}}
 
