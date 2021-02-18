@@ -10,9 +10,12 @@ export class AppComponent {
   chldFormValid: Boolean = false;
   usrName: string = ""
   usrEmail: string = ""
-   
+  userInfoDate={
+    name: this.usrName,
+    email: this.usrEmail
+  }
   parentFunction(data) {
-    console.warn(data);
+    //console.warn(data);
     this.usrName=data.name;
     this.chldFormValid=data.valid;
     this.usrEmail =data.email;

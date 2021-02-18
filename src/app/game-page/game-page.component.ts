@@ -8,7 +8,7 @@ import { GameState } from 'ngx-tetris';
 })
 export class GamePageComponent implements OnInit {
   @Output() parentFunction: EventEmitter<any> = new EventEmitter()
-
+  @Input() hero: any;
   public score = 0;
   public loggedName: string = ""
   public loggedEmail: string = ""
@@ -17,6 +17,10 @@ export class GamePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //console.warn(this.hero)
+    this.loggedEmail = this.hero.email;
+    this.loggedName = this.hero.name;
+
     // //TODO: tu też jest jakiś problem z tym zainicjowaniem czasu początkowego
     // let startTime = 3600*(new Date().getHours()) + 60*(new Date().getMinutes()) + new Date().getSeconds();
     // this.startTime = startTime;
