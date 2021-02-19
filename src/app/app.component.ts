@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Tetris by K. Ewelina';
   chldFormValid: Boolean = false;
-  usrName: string = ""
-  usrEmail: string = ""
+  public usrName: string = "";
+  public usrEmail: string = "";
   userInfoDate = {
     name: this.usrName,
     email: this.usrEmail

@@ -23,11 +23,12 @@
   <br><br><br><br><br><br>
   <!-- <br><br><br><br><br><br>
   <br><br><br><br><br><br> -->
-  <button (click)="sendData()">exit game</button>
+  <button (click)="sendResetData()">exit game</button>
 </p>
 
 <br>
-<h6>You're login as: {{hero.name}},   Your email: {{hero.email}}</h6>
+<h6>You're login as: {{ loggedName }},   Your email: {{ loggedEmail }}</h6>
+<h6>A: {{hero.usrName}}, B: {{hero.usrEmail}}, C: {{hero.chldFormValid}}</h6>
 
 <div> 
  <!--play time: {{tTtime}}-->
