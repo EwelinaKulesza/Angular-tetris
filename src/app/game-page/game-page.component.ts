@@ -13,7 +13,7 @@ export class GamePageComponent implements OnInit {
   public loggedName: string = ""
   public loggedEmail: string = ""
   //public startTime: number = 0;
-  public gameStateInicator: boolean;
+  public gameStateLabel: string = "READY";
   constructor() { }
 
   ngOnInit(): void {
@@ -33,12 +33,12 @@ export class GamePageComponent implements OnInit {
     return someValue.toString();
   }
   
-  public prettyBigGameIndicator(inputStatus: boolean) {
+  public gameState(inputStatus: boolean) {
     if (inputStatus === false) {
-      return "PAUSED";
+      this.gameStateLabel = "PAUSED";
     }else if (inputStatus === true){
-      return "STARTED"
-    } else return "READY"
+      this.gameStateLabel = "STARTED"
+    } else this.gameStateLabel = "READY"
   }
 
   sendData(){

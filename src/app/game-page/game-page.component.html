@@ -1,12 +1,12 @@
 <tetris-core #game
 (lineCleared)="onLineCleared()"></tetris-core>
-<h1>The game is: {{prettyBigGameIndicator(gameStateInicator)}}</h1>
+<h1>The game is: {{gameStateLabel}}</h1>
 <a>Score: {{ score }}</a>
 <br>
   <p>
   <button disabled = true>*****</button>
-  <button (click)="gameStateInicator = true; game.actionStart()">Start</button>
-  <button (click)="gameStateInicator = false; game.actionStop()">Stop</button>
+  <button (click)="gameState(true); game.actionStart()">Start</button>
+  <button (click)="gameState(false); game.actionStop()">Stop</button>
   <button disabled = true>*****</button>
   <br><br><br><br>
   
