@@ -25,7 +25,7 @@ export class IntroPageComponent implements OnInit {
     if (mabyNameTemp.length > 3) {
       this.nameIsInvalid = false;
       this.validNameMessage = "";
-      this.nameValue = value + "!";
+      this.nameValue = value;
     } else if (mabyNameTemp.length <= 3 ) {
     this.validNameMessage = "Dłuższe imiona mają ludzie z gazet: Olek O., Anna P.";
     } else {"Z Twoim imeniem jest coś nie tak";

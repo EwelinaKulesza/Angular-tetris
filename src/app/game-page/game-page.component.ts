@@ -10,8 +10,8 @@ export class GamePageComponent implements OnInit {
   @Output() parentFunction: EventEmitter<any> = new EventEmitter()
   @Input() hero: any;
   public score = 0;
-  public loggedName: string = "B im";
-  public loggedEmail: string = "A em";
+  public loggedName: string = "";
+  public loggedEmail: string = "";
   //public startTime: number = 0;
   public gameStateLabel: string = "READY";
   constructor() { }

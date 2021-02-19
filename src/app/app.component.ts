@@ -1,11 +1,11 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Tetris by K. Ewelina';
   chldFormValid: Boolean = false;
   public usrName: string = "";
@@ -26,6 +26,11 @@ export class AppComponent {
   constructor() {
     setInterval(() => {
       this.CurrentTime = new Date().getHours() + ':' + new Date().getMinutes() + ':'+  new Date().getSeconds()}, 1);
+  }
+
+  ngOnInit(): void {
+    this.usrName = this.userInfoDate.name;
+    this.usrEmail = this.userInfoDate.email;
   }
 }
 
