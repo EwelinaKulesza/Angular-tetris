@@ -33,7 +33,7 @@ export class GamePageComponent implements OnInit {
     return someValue.toString();
   }
   
-  public gameState(inputStatus: boolean) {
+  public gameIsStartedState(inputStatus: boolean) {
     if (inputStatus === false) {
       this.gameStateLabel = "PAUSED";
     }else if (inputStatus === true){
