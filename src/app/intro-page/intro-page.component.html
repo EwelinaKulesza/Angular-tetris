@@ -1,24 +1,27 @@
-<h3>Zagrajmy w Tetrisa {{nameValue}}</h3>
-<br>
- 
-<div> 
-    Wpisz imię i naciśnij enter: <br>
-    <input #box (keyup.enter)="onNameEnter(box.value)">
-    <br>
-    {{nameValue}} podaj email i wciśniej enter: <br>
-    <input #box1 (keyup.enter)="onEmailEnter(box1.value)">
-</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div formGroupName="user">
+        <div>
+            <label>
+                Imię:
+                <input type="text" formControlName="name" />
 
-<br>
-<div> {{this.validNameMessage}} </div>
-<br>
-<div> {{this.validEmailMessage}} </div>
-<br>
-<div *ngIf="nameIsInvalid || emailIsInvalid"> 
-    <button (click) = "checkIsValidForms()">Start</button>
-</div>
-<div *ngIf="!(nameIsInvalid || emailIsInvalid)"> 
-    <button (click)="sendData()">Start!</button>
-</div>
+            </label>
+        </div>
 
+        <div>
+            <label>
+                E-mail:
+                <input type="text" formControlName="email" />
 
+            </label>
+        </div>
+    </div>
+
+    <button type="submit">START</button>
+</form>
+
+<div *ngIf="!form.valid">
+    <div *ngIf="form.get('user.name').hasError('pattern')">Niepoprawne znaki w imieniu</div>
+    <div *ngIf="form.get('user.email').hasError('pattern')">Niepoprawne znaki w e-mailu</div>
+    <div *ngIf="!form.get('user.name').value && !form.get('user.email').value">Uzupełnij oba pola</div>
+</div>
