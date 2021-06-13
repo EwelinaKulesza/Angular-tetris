@@ -1,37 +1,38 @@
-<tetris-core #game
-(lineCleared)="onLineCleared()"></tetris-core>
+<tetris-core #game (lineCleared)="onLineCleared()"></tetris-core>
 <h1>The game is: {{gameStateLabel}}</h1>
 <a>Score: {{ score }}</a>
 <br>
-  <p>
-  <button disabled = true>*****</button>
+
+
+Witamy gracza {{ loggedName }}
+
+
+<p>
+  <button disabled=true>*****</button>
   <button (click)="gameIsStartedState(true); game.actionStart()">Start</button>
   <button (click)="gameIsStartedState(false); game.actionStop()">Stop</button>
-  <button disabled = true>*****</button>
+  <button disabled=true>*****</button>
   <br><br><br><br>
-  
+
   <button (click)="game.actionLeft()">←Left</button>
   <button (click)="game.actionRotate()">↻Rotate⟳</button>
   <button (click)="game.actionRight()">Right→</button>
   <br>
-  <button disabled = true>★★★</button>
+  <button disabled=true>★★★</button>
   <button (click)="game.actionDown()">↓Down↓</button>
-  <button disabled = true>★★★</button>
+  <button disabled=true>★★★</button>
   <br><br><br><br>
-  <button (click)="game.actionReset()">- - - - - Reset - - - - - </button>
+  <button (click)="resetScore();game.actionReset()">- - - - - Reset - - - - - </button>
   <br>
   <br><br><br><br><br><br>
 
-  <button (click)="sendResetData()">exit game</button>
+  <button (click)="exitGame()">exit game</button>
 </p>
 
 <br>
 
 
-<div> 
+<div>
 
- 
+
 </div>
-
-
-GAME
