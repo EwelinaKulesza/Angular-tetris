@@ -1,20 +1,22 @@
 <div style="text-align: center;">
-
-  <h2>
-    Welcome in {{title}}
-  </h2>
-
- <div *ngIf="!chldFormValid"><app-intro-page (parentFunction) = "parentFunction($event)"></app-intro-page>
- </div>
-
-  <div *ngIf="chldFormValid"><app-game-page (parentFunction) = "parentFunction($event)" 
-    [hero]="userInfoDate"></app-game-page>
-    <h6>Twoje imię: {{usrName}} oraz email: {{usrEmail}}</h6>
-  </div>
+  <router-outlet></router-outlet>
 
 
+<!-- to do: uporzadkować -->
+<!-- <h2>
+  Welcome in {{title}}
+</h2>
 
-<!-- <h6>messege from parrent:</h6>
-<h6>Twoje imię: {{usrName}} oraz email: {{usrEmail}}</h6> -->
+<div *ngIf="!chldFormValid">
+  <app-intro-page (parentFunction)="parentFunction($event)"></app-intro-page>
+</div>
 
-{{CurrentTime}}
+<div *ngIf="chldFormValid">
+  <app-game-page (parentFunction)="parentFunction($event)" [hero]="userInfoDate"></app-game-page>
+  <h6>Twoje imię: {{usrName}} oraz email: {{usrEmail}}</h6>
+</div>
+
+
+<h6>messege from parrent:</h6>
+<h6>Twoje imię: {{usrName}} oraz email: {{usrEmail}}</h6>
+</div> -->

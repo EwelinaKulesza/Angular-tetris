@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { GameState } from 'ngx-tetris';
 
 @Component({
@@ -14,12 +15,19 @@ export class GamePageComponent implements OnInit {
   public loggedEmail: string = "";
   //public startTime: number = 0;
   public gameStateLabel: string = "READY";
-  constructor() { }
+
+  constructor(private route: ActivatedRoute) { }
+
 
   ngOnInit(): void {
+    this.route.params.subscribe(urlParams => {
+      this.loggedName = urlParams.name;
+      this.loggedEmail = urlParams.email;
+    });
+
     //console.warn(this.hero)
-    this.loggedEmail = this.hero.email;
-    this.loggedName = this.hero.name;
+    // this.loggedEmail = this.hero.email;
+    // this.loggedName = this.hero.name;
 
     // //TODO: tu też jest jakiś problem z tym zainicjowaniem czasu początkowego
     // let startTime = 3600*(new Date().getHours()) + 60*(new Date().getMinutes()) + new Date().getSeconds();
@@ -32,16 +40,16 @@ export class GamePageComponent implements OnInit {
     someValue = this.score;
     return someValue.toString();
   }
-  
+
   public gameIsStartedState(inputStatus: boolean) {
     if (inputStatus === false) {
       this.gameStateLabel = "PAUSED";
-    }else if (inputStatus === true){
+    } else if (inputStatus === true) {
       this.gameStateLabel = "STARTED"
     } else this.gameStateLabel = "READY"
   }
 
-  sendResetData(){
+  sendResetData() {
     //   this.change.emit(input);
     let data = { valid: false, name: "", email: "" }
     this.parentFunction.emit(data)
