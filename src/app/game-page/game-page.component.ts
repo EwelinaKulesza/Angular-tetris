@@ -6,6 +6,7 @@ import { GameState } from 'ngx-tetris';
   selector: 'app-game-page',
   templateUrl: './game-page.component.html',
   styleUrls: ['./game-page.component.css']
+
 })
 export class GamePageComponent implements OnInit {
   @Output() parentFunction: EventEmitter<any> = new EventEmitter()
@@ -23,11 +24,8 @@ export class GamePageComponent implements OnInit {
     this.route.queryParams.subscribe(urlParams => {
       this.loggedName = urlParams.name;
       this.loggedEmail = urlParams.email;
-    });
 
-    // //TODO: tu też jest jakiś problem z tym zainicjowaniem czasu początkowego
-    // let startTime = 3600*(new Date().getHours()) + 60*(new Date().getMinutes()) + new Date().getSeconds();
-    // this.startTime = startTime;
+    });
   }
 
   resetScore() {
@@ -54,17 +52,5 @@ export class GamePageComponent implements OnInit {
   }
 
 
-  // //coś tu nie działa jak trzeba, ten czas początkowy niprawidłowo liczony
-  // public countPlayTime(timeOfBegining: number) {
-  //   var currentTime = 60*60*(new Date().getHours()) + 60*(new Date().getMinutes()) + new Date().getSeconds();
-  //   let playTimeAllSec = currentTime - timeOfBegining;
-  //   let playTimeHours = (playTimeAllSec - (playTimeAllSec%3600))/3600;
-  //   let playTimeSec = playTimeAllSec%60;
-  //   let playTimeMin = (playTimeAllSec - 3600*playTimeHours - playTimeSec)/60;
-  //   return (`${playTimeHours} hour, ${playTimeMin} min, ${playTimeSec} sec`)
-  // }
-  // public tTtime = this.countPlayTime(this.startTime)
-
 }
-
 
