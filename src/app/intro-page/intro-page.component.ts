@@ -45,7 +45,7 @@ export class IntroPageComponent implements OnInit {
   private createForm() {
     this.form = this.fb.group({
       user: this.fb.group({
-        name: [null, [Validators.pattern("[A-Z,a-z]*"), Validators.required, Validators.minLength(5)]],
+        name: [null, [Validators.pattern("[A-Z,a-z]*"), Validators.minLength(5), Validators.required]],
         email: [null, [Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"), Validators.required]],
         // name: ["Ewelina"],
         // email: ["eewelina@wp.pl"],

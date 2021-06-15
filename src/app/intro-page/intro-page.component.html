@@ -22,6 +22,7 @@
 
 <div *ngIf="!form.valid">
     <div *ngIf="form.get('user.name').hasError('pattern')">Niepoprawne znaki w imieniu</div>
+    <div *ngIf="form.get('user.name').errors?.minlength">Imię musi mieć co najmniej 5 znaków</div> 
     <div *ngIf="form.get('user.email').hasError('pattern')">Ten e-mail nie wygląda na prawidłowy</div>
     <div *ngIf="!form.get('user.name').value && !form.get('user.email').value">Uzupełnij oba pola</div>
 </div>
