@@ -1,1 +1,20 @@
 <button (click)="getScores()">Wez punkty</button>
+
+
+<table *ngIf="scores">
+    <tr>
+        <th>
+            <label class="header">Imię: </label>
+        </th>
+        <th>
+            <label class="header">Punkty: </label>
+        </th>
+    </tr>
+    <tr *ngFor="let score of scores">
+        <td>
+            {{score.name}}
+        </td>
+        <td>
+            {{score.score}} </td>
+    </tr>
+</table>

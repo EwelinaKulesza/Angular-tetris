@@ -1,1 +1,22 @@
 
+table {
+    margin-left: 40%
+}
+
+.header{
+    color: rgb(233, 16, 74);
+    font-weight: bold;
+    align-items: center;
+}
+
+.name {
+    padding: 5px, 10px, 5px, 10px; 
+    color: rgb(70, 2, 84);
+    font-weight: bold;
+}
+
+.score {
+    margin-left: 10px;
+    padding: 5px, 10px, 5px, 10px;
+    font-weight: bold; 
+}

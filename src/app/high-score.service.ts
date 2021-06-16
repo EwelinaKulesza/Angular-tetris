@@ -4,19 +4,26 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class HighScoreService {
   constructor(private httpClient: HttpClient) {
-    // super(httpClient);
   }
 
 
-  getScores() {
-    const headers = new HttpHeaders({ "Content-Type": "application/json" });
-    // const headers = new HttpHeaders({ "Content-Type": "text/plain" });
+  //   load(): Observable<Array<Scores>> {
+  //     const httpOptions = {
+  //         headers: new HttpHeaders({
+  //             'accept': 'application/json'
+  //         })
+  //     };
+  //     const URL = `http://tetris.chrum.it/scores`;
+  //     return this._http.get<Array<Scores>>(URL, httpOptions);
+  // }
 
-    return this.httpClient.get<any>('https://tetris.chrum.it/scores', { headers });
+  getScores() {
+    const headers = new HttpHeaders({ 'accept': "application/json" });
+    return this.httpClient.get<any>('http://tetris.chrum.it/scores', { headers });
   }
 
   postScores(scores: { name: string, score: string }) {
-    return this.httpClient.post<any>('https://tetris.chrum.it/scores', null, {
+    return this.httpClient.post<any>('http://tetris.chrum.it/scores', null, {
       params: {
         "name": scores.name,
         "score": scores.score

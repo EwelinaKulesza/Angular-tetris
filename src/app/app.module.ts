@@ -12,6 +12,7 @@ import { IntroPageModule } from './intro-page/intro-page.module';
 import { HighScoreComponent } from './intro-page/high-score/high-score.component';
 import { HighScoreService } from './high-score.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserModule,
     IntroPageModule,
     GamePageModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [HttpClient, HighScoreService],
   bootstrap: [AppComponent],

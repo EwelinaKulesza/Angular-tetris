@@ -9,19 +9,30 @@ import { HighScoreService } from '../../high-score.service';
 })
 export class HighScoreComponent implements OnInit {
 
-  constructor(private service: HighScoreService) { }
+  scores: { name: string, score: number }[];
 
+  constructor(private service: HighScoreService) { }
 
   ngOnInit() {
 
   }
 
   getScores() {
-    this.service.getScores().subscribe(data =>{
-      var myObject = JSON.parse(data);
-  console.log(myObject);
-      console.log("# data",data);
+    this.service.getScores().subscribe(data => {
+
+      this.scores = this.sort(data);
+      // var myObject = JSON.parse(data);
+      // console.log(myObject);
+      console.log("# data", data);
     });
+  }
+
+
+  sort(data) {
+
+    
+
+    return data;
   }
 
 }
