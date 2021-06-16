@@ -1,4 +1,4 @@
-<tetris-core #game (lineCleared)="onLineCleared()"></tetris-core>
+<tetris-core #game (lineCleared)="onLineCleared()" [ngClass]="test() ? 'black-and-white' : ''"></tetris-core>
 <h1>The game is: {{gameStateLabel}}</h1>
 <a>Score: {{ score }}</a>
 <br>
@@ -31,6 +31,8 @@ Witamy gracza {{ loggedName }}
 
 <br>
 <button (click)="postScores()">Zapisz punkty</button>
+<button (click)="changeColors()">Zmień kolor</button>
+
 
 <div>
 

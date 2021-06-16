@@ -5,10 +5,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-intro-page',
   templateUrl: './intro-page.component.html',
-  styleUrls: ['./intro-page.component.css']
+  styleUrls: ['./intro-page.component.scss']
 })
 export class IntroPageComponent implements OnInit {
   form: FormGroup;
+  retroMode = false;
+
   @Output() parentFunction: EventEmitter<any> = new EventEmitter()
 
   constructor(
@@ -17,6 +19,10 @@ export class IntroPageComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+  }
+
+  changeMode() {
+    this.retroMode = !this.retroMode;
   }
 
   onSubmit() {
@@ -35,7 +41,8 @@ export class IntroPageComponent implements OnInit {
       this.router.navigate(['/game'], {
         queryParams: {
           name: this.form.get("user.name").value,
-          email: this.form.get("user.email").value
+          email: this.form.get("user.email").value,
+          retroMode: this.retroMode
         }
       });
     }

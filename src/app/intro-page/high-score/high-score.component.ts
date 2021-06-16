@@ -5,7 +5,7 @@ import { HighScoreService } from '../../high-score.service';
 @Component({
   selector: 'app-high-score',
   templateUrl: './high-score.component.html',
-  styleUrls: ['./high-score.component.css'],
+  styleUrls: ['./high-score.component.scss'],
 })
 export class HighScoreComponent implements OnInit {
 

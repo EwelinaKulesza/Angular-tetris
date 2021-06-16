@@ -6,7 +6,7 @@ import { HighScoreService } from '../high-score.service';
 @Component({
   selector: 'app-game-page',
   templateUrl: './game-page.component.html',
-  styleUrls: ['./game-page.component.css']
+  styleUrls: ['./game-page.component.scss']
 
 })
 export class GamePageComponent implements OnInit {
@@ -17,17 +17,28 @@ export class GamePageComponent implements OnInit {
   public loggedEmail: string = "";
   //public startTime: number = 0;
   public gameStateLabel: string = "READY";
+  retroMode = false;
+
 
   constructor(private route: ActivatedRoute,
     private router: Router,
     private service: HighScoreService
   ) { }
 
+  changeColors() {
+    this.retroMode = !this.retroMode;
+  }
+
+  test() {
+    console.log("test ->", this.retroMode);
+    return this.retroMode
+  }
+
   ngOnInit(): void {
     this.route.queryParams.subscribe(urlParams => {
       this.loggedName = urlParams.name;
       this.loggedEmail = urlParams.email;
-
+      this.retroMode = Boolean(JSON.parse(urlParams.retroMode));
     });
   }
 
@@ -51,6 +62,7 @@ export class GamePageComponent implements OnInit {
   }
 
   exitGame() {
+    this.retroMode = false;
     this.router.navigate(['/intro']);
   }
 
