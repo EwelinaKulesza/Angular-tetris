@@ -20,7 +20,9 @@ export class HighScoreComponent implements OnInit {
   getScores() {
     this.service.getScores().subscribe(data => {
 
-      this.scores = this.sort(data);
+      this.scores = data;
+
+      // this.scores = this.sort(data);
       // var myObject = JSON.parse(data);
       // console.log(myObject);
       console.log("# data", data);
@@ -28,11 +30,13 @@ export class HighScoreComponent implements OnInit {
   }
 
 
-  sort(data) {
+  // sort(data) {
+  //   // points.sort(function (a, b) { return a - b });
 
-    
+  //   let x = data.filter(el => el.score).sort(function (a, b) { return a - b });
+  //   console.log(x);
 
-    return data;
-  }
+  //   return data;
+  // }
 
 }

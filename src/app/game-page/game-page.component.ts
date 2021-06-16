@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GameState } from 'ngx-tetris';
+import { HighScoreService } from '../high-score.service';
 
 @Component({
   selector: 'app-game-page',
@@ -18,7 +19,9 @@ export class GamePageComponent implements OnInit {
   public gameStateLabel: string = "READY";
 
   constructor(private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private service: HighScoreService
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(urlParams => {
@@ -51,6 +54,9 @@ export class GamePageComponent implements OnInit {
     this.router.navigate(['/intro']);
   }
 
+  postScores() {
+    this.service.postScores(this.loggedName, this.score).subscribe();
+  }
 
 }
 
